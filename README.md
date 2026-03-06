@@ -29,3 +29,7 @@ La marca **Piedra Alta** es ficticia y fue creada únicamente con fines educativ
 ## Vista 
 <img width="1328" height="617" alt="image" src="https://github.com/user-attachments/assets/c56d080a-0583-481f-b8fb-e0b257f60753" />
 
+## 👩‍💻 Autora
+
+**Delfina**
+GitHub: [@delfinaibanez](https://github.com/delfinaibanez)
