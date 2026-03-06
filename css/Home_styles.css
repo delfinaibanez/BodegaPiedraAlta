@@ -1,0 +1,597 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --negro:         #060606;
+    --negro-mid:     #0E0E0E;
+    --negro-soft:    #161616;
+    --dorado:        #C9A84C;
+    --rojo:          #7A2030;
+    --blanco:        #F4F0EC;
+    --blanco-mid:    #B8B0A8;
+    --gris:          #686060;
+    --borde:         rgba(255,255,255,0.07);
+    --borde-dorado:  rgba(201,168,76,0.18);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Jost', sans-serif;
+    background: var(--negro);
+    color: var(--blanco);
+    overflow-x: hidden;
+}
+
+/* ── NAVBAR ── */
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 5rem;
+    background: var(--negro);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.4s, padding 0.4s;
+}
+nav.scrolled {
+    border-bottom: 1px solid var(--borde);
+    padding: 1.2rem 5rem;
+}
+.nav-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--blanco);
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.nav-logo span { color: var(--dorado); }
+.nav-links { display: flex; gap: 3rem; list-style: none; }
+.nav-links a {
+    color: var(--blanco-mid);
+    text-decoration: none;
+    font-size: 0.68rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.2s;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 1px;
+    background: var(--dorado);
+    transition: width 0.3s ease;
+}
+.nav-links a:hover { color: var(--blanco-mid); }
+.nav-links a:hover::after { width: 100%; }
+
+/* ── HERO ── */
+#hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom,
+            rgba(6,6,6,0.8) 0%,
+            rgba(6,6,6,0.35) 45%,
+            rgba(6,6,6,0.92) 100%),
+        url('../img/bodega.jpg') center/cover no-repeat;
+    filter: grayscale(100%) contrast(1.1);
+}
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: var(--blanco);
+    padding: 0 2rem;
+    animation: fadeUp 1.4s ease both;
+}
+.hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--blanco-mid);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: var(--blanco);
+}
+.hero-title em {
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--dorado);
+    display: block;
+    font-size: 0.55em;
+    letter-spacing: 0.25em;
+    margin-top: 0.4em;
+    font-weight: 300;
+}
+.hero-ornament {
+    margin: 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    opacity: 0.4;
+}
+.hero-ornament span { width: 60px; height: 1px; background: var(--dorado); }
+.hero-ornament i { font-style: normal; color: var(--dorado); font-size: 0.6rem; }
+.hero-sub {
+    font-size: 0.72rem;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    color: var(--blanco-mid);
+    opacity: 0.6;
+    margin-bottom: 3.5rem;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+}
+.hero-cta {
+    display: inline-block;
+    padding: 1rem 3.5rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--blanco);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative;
+}
+.hero-cta::before,
+.hero-cta::after {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--dorado);
+    font-size: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.hero-cta::before { left: 0.8rem; }
+.hero-cta::after  { right: 0.8rem; }
+.hero-cta:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.5);
+    box-shadow: 0 0 35px rgba(255,255,255,0.08);
+}
+.hero-cta:hover::before,
+.hero-cta:hover::after { opacity: 1; }
+.hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--blanco);
+    opacity: 0.2;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+}
+.scroll-line {
+    width: 1px;
+    height: 45px;
+    background: linear-gradient(to bottom, transparent, var(--dorado));
+    animation: scrollLine 2s ease-in-out infinite;
+}
+
+/* ── SECCIONES GENERALES ── */
+section { padding: 8rem 5rem; }
+.section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--blanco-mid);
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+}
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--blanco);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.section-title em {
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--dorado);
+    text-transform: none;
+    font-weight: 300;
+    font-size: 1.1em;
+}
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+    width: fit-content;
+}
+.divider::before { content: ''; width: 40px; height: 1px; background: var(--dorado); }
+.divider::after  { content: '✦'; color: var(--dorado); font-size: 0.5rem; }
+
+/* ── NOSOTROS ── */
+#nosotros {
+    background: var(--negro-mid);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7rem;
+    align-items: center;
+}
+.nosotros-img { position: relative; height: 560px; }
+.nosotros-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.05);
+    transition: filter 0.7s ease;
+    position: relative; z-index: 1;
+}
+.nosotros-img:hover img { filter: grayscale(0%) contrast(1); }
+.nosotros-img::before {
+    content: '';
+    position: absolute;
+    top: -12px; left: -12px; right: 12px; bottom: 12px;
+    border: 1px solid var(--borde-dorado);
+    z-index: 0;
+}
+.nosotros-text p {
+    font-size: 0.9rem; line-height: 2.1;
+    color: var(--gris); font-weight: 300;
+    margin-bottom: 1.3rem; letter-spacing: 0.02em;
+}
+.nosotros-stats {
+    display: flex; gap: 3rem;
+    margin-top: 3rem; padding-top: 2.5rem;
+    border-top: 1px solid var(--borde);
+}
+.stat-num {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem; font-weight: 400;
+    color: var(--blanco); line-height: 1;
+}
+.stat-label {
+    font-size: 0.58rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gris);
+    margin-top: 0.5rem; font-family: 'Cinzel', serif;
+}
+
+/* ── VINOS ── */
+#vinos { background: var(--negro); }
+.vinos-wrapper { position: relative; margin-top: 4rem; overflow: hidden; }
+.vinos-grid {
+    display: flex; gap: 0;
+    border: 1px solid var(--borde);
+    transition: transform 0.5s ease;
+}
+.vino-card {
+    min-width: calc(100% / 3); flex-shrink: 0;
+    background: var(--negro-soft);
+    padding: 3rem 2.5rem;
+    border-right: 1px solid var(--borde);
+    transition: background 0.3s;
+    cursor: pointer; position: relative; overflow: hidden;
+}
+.vino-card:last-child { border-right: none; }
+.vino-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+    opacity: 0; transition: opacity 0.4s;
+}
+.vino-card:hover { background: #121212; }
+.vino-card:hover::before { opacity: 1; }
+.vino-icon { font-size: 1.8rem; margin-bottom: 2rem; display: block; filter: grayscale(100%); }
+.vino-varietal {
+    font-family: 'Cinzel', serif; font-size: 0.58rem;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--blanco-mid); margin-bottom: 0.7rem;
+}
+.vino-nombre {
+    font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 400;
+    color: var(--blanco); margin-bottom: 1.2rem; line-height: 1.3;
+    text-transform: uppercase; letter-spacing: 0.06em;
+}
+.vino-desc {
+    font-size: 0.78rem; line-height: 1.95;
+    color: var(--gris); font-weight: 300; margin-bottom: 1.5rem;
+}
+.vino-precio {
+    font-family: 'Cinzel', serif; font-size: 1.1rem;
+    color: var(--blanco-mid); font-weight: 300;
+    margin-bottom: 1.5rem; display: block;
+}
+.vino-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+.btn-vino {
+    padding: 0.55rem 1.3rem; border-radius: 50px;
+    font-family: 'Cinzel', serif; font-size: 0.52rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.3s; cursor: pointer;
+    border: 1px solid var(--borde); color: var(--blanco-mid);
+    background: transparent; display: inline-block;
+}
+.btn-vino:hover { border-color: rgba(255,255,255,0.25); color: var(--blanco); }
+.btn-vino-comprar {
+    border-color: rgba(122,32,48,0.4);
+    color: var(--blanco-mid); background: transparent;
+}
+.btn-vino-comprar:hover {
+    background: rgba(122,32,48,0.12);
+    border-color: rgba(122,32,48,0.7);
+    color: var(--blanco);
+    box-shadow: 0 0 18px rgba(122,32,48,0.12);
+}
+.slider-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(6,6,6,0.9); border: 1px solid var(--borde);
+    color: var(--blanco-mid); width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 0.9rem;
+    transition: background 0.3s, border-color 0.3s, color 0.3s; z-index: 10;
+}
+.slider-btn:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.2); color: var(--blanco); }
+.slider-prev { left: -20px; }
+.slider-next { right: -20px; }
+
+/* ── ENÓLOGO ── */
+#enologo {
+    background: var(--negro-mid);
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 7rem; align-items: center;
+}
+.enologo-img { position: relative; height: 580px; }
+.enologo-img img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top;
+    filter: grayscale(100%) contrast(1.05); transition: filter 0.7s ease;
+    position: relative; z-index: 1;
+}
+.enologo-img:hover img { filter: grayscale(0%) contrast(1); }
+.enologo-img::before {
+    content: ''; position: absolute;
+    top: -12px; left: -12px; right: 12px; bottom: 12px;
+    border: 1px solid var(--borde-dorado); z-index: 0;
+}
+.enologo-badge {
+    position: absolute; bottom: 2rem; right: -1.5rem; z-index: 3;
+    background: var(--negro); border: 1px solid var(--borde);
+    padding: 1.2rem 1.5rem; text-align: center;
+}
+.badge-num {
+    font-family: 'Cinzel', serif; font-size: 2.2rem;
+    color: var(--blanco); display: block; line-height: 1;
+}
+.badge-label {
+    font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gris); font-family: 'Cinzel', serif;
+    display: block; margin-top: 0.3rem;
+}
+.enologo-quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.3rem; color: var(--blanco-mid); line-height: 1.7;
+    margin-bottom: 2rem; padding-left: 1.5rem;
+    border-left: 1px solid var(--dorado); font-weight: 300;
+}
+.enologo-text p {
+    font-size: 0.9rem; line-height: 2.1;
+    color: var(--gris); font-weight: 300; margin-bottom: 1.2rem;
+}
+.enologo-text strong { color: var(--blanco-mid); font-weight: 400; }
+.enologo-firma {
+    margin-top: 2.5rem; padding-top: 2rem;
+    border-top: 1px solid var(--borde);
+    display: flex; flex-direction: column; gap: 0.3rem;
+}
+.firma-texto {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.8rem; color: var(--blanco); font-weight: 300;
+}
+.firma-cargo {
+    font-family: 'Cinzel', serif; font-size: 0.55rem;
+    letter-spacing: 0.25em; text-transform: uppercase; color: var(--gris);
+}
+
+/* ── EXPERIENCIAS ── */
+#experiencias {
+    background: var(--negro);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 7rem; align-items: center;
+}
+.exp-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; border: 1px solid var(--borde); margin-top: 3rem;
+}
+.exp-card {
+    background: var(--negro); padding: 2.2rem 2rem;
+    border-right: 1px solid var(--borde); border-bottom: 1px solid var(--borde);
+    transition: background 0.3s;
+}
+.exp-card:nth-child(2), .exp-card:nth-child(4) { border-right: none; }
+.exp-card:nth-child(3), .exp-card:nth-child(4) { border-bottom: none; }
+.exp-card:hover { background: var(--negro-soft); }
+.exp-icon { font-size: 1.4rem; margin-bottom: 1rem; display: block; filter: grayscale(100%); }
+.exp-nombre {
+    font-family: 'Cinzel', serif; font-size: 0.82rem;
+    color: var(--blanco); margin-bottom: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+}
+.exp-desc { font-size: 0.76rem; color: var(--gris); line-height: 1.85; font-weight: 300; }
+.exp-img { height: 560px; overflow: hidden; position: relative; border: 1px solid var(--borde); }
+.exp-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(100%) contrast(1.05);
+    transition: transform 0.8s ease, filter 0.8s ease;
+}
+.exp-img:hover img { transform: scale(1.04); filter: grayscale(0%) contrast(1); }
+
+/* ── PRENSA ── */
+#prensa { background: var(--negro-mid); padding-bottom: 8rem; }
+.prensa-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0; border: 1px solid var(--borde);
+}
+.prensa-card {
+    padding: 2.8rem 2.5rem 2.2rem;
+    border-right: 1px solid var(--borde); border-bottom: 1px solid var(--borde);
+    transition: background 0.3s; position: relative; overflow: hidden;
+}
+.prensa-card:nth-child(3), .prensa-card:nth-child(6) { border-right: none; }
+.prensa-card:nth-child(4), .prensa-card:nth-child(5), .prensa-card:nth-child(6) { border-bottom: none; }
+.prensa-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.12), transparent);
+    opacity: 0; transition: opacity 0.4s;
+}
+.prensa-card:hover { background: var(--negro-soft); }
+.prensa-card:hover::before { opacity: 1; }
+.prensa-medio {
+    font-family: 'Cinzel', serif; font-size: 0.62rem;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--blanco-mid); margin-bottom: 1rem;
+}
+.prensa-puntos {
+    font-family: 'Cinzel', serif; font-size: 2rem;
+    color: var(--blanco); margin-bottom: 1.2rem; line-height: 1;
+}
+.prensa-puntos span { font-size: 0.9rem; color: var(--gris); }
+.prensa-titular {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1rem; color: var(--blanco-mid); line-height: 1.75;
+    margin-bottom: 1.2rem; font-weight: 300;
+}
+.prensa-meta {
+    font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gris); opacity: 0.4; font-family: 'Cinzel', serif; margin-bottom: 0.5rem;
+}
+.btn-leer-mas {
+    display: inline-block; margin-top: 1rem; padding: 0.5rem 1.3rem;
+    border: 1px solid var(--borde); border-radius: 50px;
+    color: var(--blanco-mid); font-family: 'Cinzel', serif;
+    font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase;
+    text-decoration: none; transition: border-color 0.3s, color 0.3s;
+}
+.btn-leer-mas:hover { border-color: rgba(255,255,255,0.25); color: var(--blanco); }
+
+/* ── CONTACTO ── */
+#contacto {
+    background: var(--negro);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 7rem; align-items: start;
+}
+.contacto-info p { font-size: 0.87rem; color: var(--gris); line-height: 2.1; font-weight: 300; margin-bottom: 2.5rem; }
+.contacto-dato {
+    display: flex; flex-direction: column; gap: 0.3rem;
+    margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--borde);
+}
+.dato-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gris); }
+.dato-val { font-size: 0.87rem; color: var(--blanco-mid); font-weight: 300; }
+.contacto-form { display: flex; flex-direction: column; gap: 1.8rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-group label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gris); }
+.form-group input,
+.form-group textarea,
+.form-group select {
+    background: transparent; border: none;
+    border-bottom: 1px solid var(--borde); padding: 0.8rem 0;
+    font-family: 'Jost', sans-serif; font-size: 0.87rem; font-weight: 300;
+    color: var(--blanco); outline: none; transition: border-color 0.2s; width: 100%;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { border-bottom-color: rgba(255,255,255,0.3); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--gris); opacity: 0.35; }
+.form-group select option { background: var(--negro-soft); color: var(--blanco); }
+.form-group textarea { resize: none; height: 90px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.btn-enviar {
+    align-self: flex-start; margin-top: 0.5rem; padding: 1rem 3rem;
+    background: transparent; color: var(--blanco);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-family: 'Cinzel', serif; font-size: 0.6rem;
+    letter-spacing: 0.32em; text-transform: uppercase; cursor: pointer;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.btn-enviar:hover {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.35);
+    box-shadow: 0 0 25px rgba(255,255,255,0.05);
+}
+
+/* ── FOOTER ── */
+footer {
+    background: var(--negro-mid); padding: 3rem 5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid var(--borde);
+}
+.footer-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--blanco); font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; }
+.footer-logo span { color: var(--dorado); }
+.footer-copy { font-size: 0.6rem; color: var(--gris); letter-spacing: 0.15em; opacity: 0.35; font-family: 'Cinzel', serif; }
+
+/* ── ANIMACIONES ── */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollLine {
+    0%   { transform: scaleY(0); transform-origin: top; }
+    50%  { transform: scaleY(1); transform-origin: top; }
+    51%  { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.85s ease, transform 0.85s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    nav.scrolled { padding: 0.8rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links a { font-size: 0.6rem; }
+    section { padding: 5rem 1.5rem; }
+    #nosotros, #enologo, #experiencias, #contacto { grid-template-columns: 1fr; gap: 3rem; }
+    .nosotros-img { height: 320px; }
+    .vino-card { min-width: 100%; border-right: none; border-bottom: 1px solid var(--borde); }
+    .slider-prev { left: 4px; }
+    .slider-next { right: 4px; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .exp-img { height: 300px; }
+    .enologo-img { height: 360px; }
+    .enologo-badge { right: 0.5rem; }
+    .prensa-grid { grid-template-columns: 1fr; }
+    .prensa-card { border-right: none; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+}

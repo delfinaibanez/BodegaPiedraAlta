@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega Piedra Alta — Mendoza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Home_styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+    <a href="#hero" class="nav-logo">Piedra <span>Alta</span></a>
+    <ul class="nav-links">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#vinos">Vinos</a></li>
+        <li><a href="#enologo">Nuestro Enólogo</a></li>
+        <li><a href="#experiencias">Experiencias</a></li>
+        <li><a href="#prensa">Prensa</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <p class="hero-eyebrow">Mendoza, Argentina &nbsp;·&nbsp; Desde 1947</p>
+        <h1 class="hero-title">
+            Bodega
+            <em>Piedra Alta</em>
+        </h1>
+        <div class="hero-ornament">
+            <span></span>
+            <i>✦</i>
+            <span></span>
+        </div>
+        <p class="hero-sub">Vinos de altura nacidos entre los Andes</p>
+        <a href="#vinos" class="hero-cta">Descubrí nuestros vinos</a>
+    </div>
+    <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+    </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+    <div class="nosotros-img reveal">
+        <img src="img/imagen_vino.jpg" alt="Viñedo Bodega Piedra Alta">
+    </div>
+    <div class="nosotros-text reveal">
+        <p class="section-eyebrow">Nuestra historia</p>
+        <h2 class="section-title">Tres generaciones<br>cultivando <em>tradición</em></h2>
+        <div class="divider"></div>
+        <p>En 1947, Don Aurelio Marchetti llegó desde Italia con una sola certeza: las piedras del Río Mendoza guardaban el secreto de los mejores vinos del mundo. Plantó sus primeras cepas a 1.050 metros sobre el nivel del mar, donde el sol brilla con intensidad y las noches son frescas.</p>
+        <p>Hoy, tres generaciones después, Bodega Piedra Alta continúa ese legado. Elaboramos vinos de terroir con alma mendocina — cada botella es el resultado de años de paciencia, amor por la tierra y respeto por la vid.</p>
+        <div class="nosotros-stats">
+            <div>
+                <div class="stat-num">76</div>
+                <div class="stat-label">Años de historia</div>
+            </div>
+            <div>
+                <div class="stat-num">120</div>
+                <div class="stat-label">Hectáreas de viñedo</div>
+            </div>
+            <div>
+                <div class="stat-num">18</div>
+                <div class="stat-label">Variedades cultivadas</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VINOS -->
+<section id="vinos">
+    <div class="reveal">
+        <p class="section-eyebrow">Nuestra selección</p>
+        <h2 class="section-title">Los vinos de <em>Piedra Alta</em></h2>
+        <div class="divider"></div>
+    </div>
+    <div class="vinos-wrapper reveal">
+        <button class="slider-btn slider-prev" onclick="moverSlider(-1)">&#8592;</button>
+        <div class="vinos-grid" id="vinosGrid">
+            <div class="vino-card">
+
+                <p class="vino-varietal">Malbec</p>
+                <h3 class="vino-nombre">Gran Reserva<br>Piedra Alta</h3>
+                <p class="vino-desc">Intenso color rubí con notas de ciruelas maduras, chocolate negro y especias. 18 meses en barrica de roble francés.</p>
+                <span class="vino-precio">$ 4.800</span>
+               <div class="vino-actions">
+               <a href="#" class="btn-vino">Ver más</a>
+               <a href="#" class="btn-vino btn-vino-comprar">Comprar</a>
+               </div>
+            </div>
+            <div class="vino-card">
+  
+                <p class="vino-varietal">Cabernet Sauvignon</p>
+                <h3 class="vino-nombre">Cóndor Negro<br>Reserva</h3>
+                <p class="vino-desc">Estructura firme y elegante con notas de cassis, cedro y tabaco. Un vino de guarda con gran potencial de envejecimiento.</p>
+                <span class="vino-precio">$ 3.600</span>
+                <div class="vino-actions">
+               <a href="#" class="btn-vino">Ver más</a>
+               <a href="#" class="btn-vino btn-vino-comprar">Comprar</a>
+               </div>
+            </div>
+            <div class="vino-card">
+
+                <p class="vino-varietal">Torrontés</p>
+                <h3 class="vino-nombre">Valle del Sol<br>Blanco</h3>
+                <p class="vino-desc">Fresco y aromático, con notas florales de jazmín y durazno. La expresión más pura del terroir mendocino en blanco.</p>
+                <span class="vino-precio">$ 2.200</span>
+                <div class="vino-actions">
+               <a href="#" class="btn-vino">Ver más</a>
+               <a href="#" class="btn-vino btn-vino-comprar">Comprar</a>
+               </div>
+            </div>
+            <div class="vino-card">
+             
+                <p class="vino-varietal">Rosé</p>
+                <h3 class="vino-nombre">Flor de Piedra<br>Rosado</h3>
+                <p class="vino-desc">Delicado y fresco, con notas de frutillas silvestres y pétalos de rosa. Perfecto para los atardeceres mendocinos.</p>
+                <span class="vino-precio">$ 1.900</span>
+                <div class="vino-actions">
+               <a href="#" class="btn-vino">Ver más</a>
+               <a href="#" class="btn-vino btn-vino-comprar">Comprar</a>
+               </div>
+            </div>
+        </div>
+        <button class="slider-btn slider-next" onclick="moverSlider(1)">&#8594;</button>
+    </div>
+</section>
+
+<!-- ENÓLOGO -->
+<section id="enologo">
+    <div class="enologo-img reveal">
+        <img src="img/enologo.jpg" alt="Enólogo Bodega Piedra Alta">
+        <div class="enologo-badge">
+            <span class="badge-num">25</span>
+            <span class="badge-label">años de oficio</span>
+        </div>
+    </div>
+    <div class="enologo-text reveal">
+        <p class="section-eyebrow">Conocé al enólogo</p>
+        <h2 class="section-title">El alma detrás<br>de cada <em>cosecha</em></h2>
+        <div class="divider"></div>
+        <p class="enologo-quote">"Un gran vino no se hace — se escucha. Escuchás la tierra, el clima, la cepa. Yo solo soy el intérprete."</p>
+        <p>Nacido en Luján de Cuyo y formado en la Universidad Nacional de Cuyo, <strong>Marcos Vidal</strong> lleva 25 años elaborando vinos en Piedra Alta. Estudió enología en Burdeos y regresó a Mendoza convencido de que el Malbec argentino no tiene rival en el mundo.</p>
+        <p>Su filosofía es simple: intervenir lo menos posible, respetar el terroir y dejar que la montaña hable por sí sola. Sus vinos han sido reconocidos en las guías más importantes de Europa y América.</p>
+        <div class="enologo-firma">
+            <span class="firma-texto">Marcos Vidal</span>
+            <span class="firma-cargo">Enólogo Jefe · Bodega Piedra Alta</span>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCIAS -->
+<section id="experiencias">
+    <div class="reveal">
+        <p class="section-eyebrow">Turismo enológico</p>
+        <h2 class="section-title">Viví la <em>experiencia</em><br>Piedra Alta</h2>
+        <div class="divider"></div>
+        <p style="font-size:0.87rem; color:var(--gris); font-weight:300; line-height:2; margin-bottom:0;">Abrimos las puertas de nuestra bodega para que puedas conocer de cerca el proceso de elaboración de nuestros vinos, recorrer los viñedos y disfrutar de una experiencia gastronómica única en el corazón de Mendoza.</p>
+        <div class="exp-grid">
+            <div class="exp-card">
+
+                <h4 class="exp-nombre">Visita a la Bodega</h4>
+                <p class="exp-desc">Recorrido guiado por la bodega y los viñedos. Incluye degustación de 3 vinos.</p>
+            </div>
+            <div class="exp-card">
+
+                <h4 class="exp-nombre">Almuerzo Maridaje</h4>
+                <p class="exp-desc">Menú de 4 pasos elaborado con productos regionales, maridado con nuestra selección.</p>
+            </div>
+            <div class="exp-card">
+     
+                <h4 class="exp-nombre">Vendimia en Viñedo</h4>
+                <p class="exp-desc">Participá de la cosecha artesanal en temporada. Una experiencia única e irrepetible.</p>
+            </div>
+            <div class="exp-card">
+      
+                <h4 class="exp-nombre">Curso de Cata</h4>
+                <p class="exp-desc">Aprendé a identificar aromas, sabores y texturas con nuestra sommelier.</p>
+            </div>
+        </div>
+    </div>
+    <div class="exp-img reveal">
+        <img src="img/experiencias.jpeg" alt="Experiencia en bodega">
+    </div>
+</section>
+
+<!-- PRENSA -->
+<section id="prensa">
+    <div class="reveal" style="text-align:center; margin-bottom:4rem;">
+        <p class="section-eyebrow">En los medios</p>
+        <h2 class="section-title">Piedra Alta en la <em>prensa</em></h2>
+        <div class="divider" style="margin:0 auto 0;"></div>
+    </div>
+    <div class="prensa-grid reveal">
+        <div class="prensa-card">
+            <div class="prensa-medio">Wine Spectator</div>
+    
+            <p class="prensa-titular">"One of the most compelling Malbecs to emerge from Mendoza this decade."</p>
+            <div class="prensa-meta">Gran Reserva 2021 · Marzo 2024</div>
+            <a href="#" class="btn-leer-mas">Leer más</a>
+        </div>
+        <div class="prensa-card">
+            <div class="prensa-medio">La Nación</div>
+
+            <p class="prensa-titular">"Piedra Alta redefine el concepto de vino de alta gama en Argentina con su nueva línea de Gran Reserva."</p>
+            <div class="prensa-meta">Suplemento Vinos · Enero 2024</div>
+            <a href="#" class="btn-leer-mas">Leer más</a>
+        </div>
+        <div class="prensa-card">
+            <div class="prensa-medio">Decanter</div>
+
+            <p class="prensa-titular">"Elegant, precise and deeply rooted in its terroir. A benchmark for Argentine Cabernet."</p>
+            <div class="prensa-meta">Cóndor Negro 2020 · Octubre 2023</div>
+            <a href="#" class="btn-leer-mas">Leer más</a>
+        </div>
+        <div class="prensa-card">
+            <div class="prensa-medio">Clarín</div>
+
+            <p class="prensa-titular">"La bodega familiar que se convirtió en referente mundial del Malbec mendocino en menos de una generación."</p>
+            <div class="prensa-meta">Suplemento Económico · Agosto 2023</div>
+            <a href="#" class="btn-leer-mas">Leer más</a>
+        </div>
+        <div class="prensa-card">
+            <div class="prensa-medio">Robert Parker</div>
+
+            <p class="prensa-titular">"Extraordinary depth and complexity. The minerality of the high-altitude terroir shines through every sip."</p>
+            <div class="prensa-meta">Gran Reserva 2020 · Junio 2023</div>
+            <a href="#" class="btn-leer-mas">Leer más</a>
+        </div>
+        <div class="prensa-card">
+            <div class="prensa-medio">Infobae</div>
+            <p class="prensa-titular">"Bodega Piedra Alta fue elegida entre las 50 bodegas más visitadas de Latinoamérica por segunda vez consecutiva."</p>
+            <div class="prensa-meta">Turismo enológico · Mayo 2023</div>
+            <a href="#" class="btn-leer-mas">Leer más</a>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+    <div class="contacto-info reveal">
+        <p class="section-eyebrow">Contacto</p>
+        <h2 class="section-title">Visitanos en<br><em>Mendoza</em></h2>
+        <div class="divider"></div>
+        <p>Reservá tu visita o escribinos para más información sobre nuestros vinos y experiencias.</p>
+        <div class="contacto-dato">
+            <span class="dato-label">Dirección</span>
+            <span class="dato-val">Ruta Provincial 15, Km 8 · Luján de Cuyo, Mendoza</span>
+        </div>
+        <div class="contacto-dato">
+            <span class="dato-label">Teléfono</span>
+            <span class="dato-val">+54 261 400-0000</span>
+        </div>
+        <div class="contacto-dato">
+            <span class="dato-label">Email</span>
+            <span class="dato-val">visitas@bodegapiedraalta.com.ar</span>
+        </div>
+        <div class="contacto-dato">
+            <span class="dato-label">Horarios de visita</span>
+            <span class="dato-val">Lunes a Sábado · 10:00 — 18:00 hs</span>
+        </div>
+    </div>
+    <div class="reveal">
+        <form class="contacto-form" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="tu@email.com" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Motivo de consulta</label>
+                <select>
+                    <option value="">Seleccioná una opción</option>
+                    <option>Reserva de visita</option>
+                    <option>Almuerzo maridaje</option>
+                    <option>Compra de vinos</option>
+                    <option>Curso de cata</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Mensaje</label>
+                <textarea placeholder="Escribí tu consulta..."></textarea>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar consulta</button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">Piedra <span>Alta</span></div>
+    <p class="footer-copy">© 2024 Bodega Piedra Alta · Mendoza, Argentina · Todos los derechos reservados</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
