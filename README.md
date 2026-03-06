@@ -15,14 +15,17 @@ Este proyecto consiste en una landing page para una bodega ficticia llamada **Pi
 - CSS3
 - JavaScript (Vanilla)
 
-## 🎯 Objetivo del proyecto
+##  Objetivo del proyecto
 
 El objetivo de este proyecto es mostrar habilidades en:
-
 - Maquetación web
 - Diseño responsive
 - Estructuración de interfaces
 - Desarrollo front-end sin frameworks
-## ⚠️ Nota
-
+  
+## Nota
 La marca **Piedra Alta** es ficticia y fue creada únicamente con fines educativos y de portafolio.
+
+## Vista 
+<img width="1328" height="617" alt="image" src="https://github.com/user-attachments/assets/c56d080a-0583-481f-b8fb-e0b257f60753" />
+
