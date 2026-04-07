@@ -4,15 +4,23 @@ window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// Reveal on scroll
+// Reveal on scroll 
 const reveals = document.querySelectorAll('.reveal');
+
+// Hacemos visibles todos por defecto primero (fallback)
+reveals.forEach(el => {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+});
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
             setTimeout(() => entry.target.classList.add('visible'), i * 100);
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); // 👈 fix principal
+
 reveals.forEach(el => observer.observe(el));
 
 // Form submit
